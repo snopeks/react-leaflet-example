@@ -16,29 +16,29 @@ export default class LayersControlExample extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      center: [51.505, -0.09],
-      count: 0
     }
     this.buttonClick = this.buttonClick.bind(this);
     this.mapClick = this.mapClick.bind(this);
   }
 
   buttonClick(){
-    console.log('click')
-    this.setState({center: [49.28, -123.12]});
+    let lat = 49.28
+    let lng = -123.12
+    this.props.onChange(lat, lng);
 
   }
   mapClick(e){
     let lat = e.latlng.lat;
     let lng = e.latlng.lng;
-    this.setState({center: [lat, lng]})
+    this.props.onChange(lat, lng)
+
   }
   render() {
     const rectangle = [[51.49, -0.08], [51.5, -0.06]]
 
     return (
       <div>
-      <Map center={this.state.center} zoom={13} onClick={this.mapClick}>
+      <Map center={this.props.location} zoom={13} onClick={this.mapClick}>
         <LayersControl position="topright">
           <BaseLayer checked name="OpenStreetMap.Mapnik">
             <TileLayer
@@ -52,9 +52,15 @@ export default class LayersControlExample extends Component {
               url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
             />
           </BaseLayer>
+          <BaseLayer name="Mapbox.Run-Bike-Hike">
+            <TileLayer
+              attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+              url="https://api.tiles.mapbox.com/v4/mapbox.run-bike-hike/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RlcGhzbm9wZWsiLCJhIjoiY2plaGg1OXY4MGF0NjJ3bmxwNXZiY3VoayJ9.nDLlDzAz5UZYZH0I5SYSpA"
+            />
+          </BaseLayer>
           <Overlay name="Marker with popup">
           <LayerGroup>
-            <Marker position={this.state.center}>
+            <Marker position={this.props.location}>
               <Popup>
                 <span>
                   A pretty CSS3 popup. <br /> Easily customizable.
@@ -86,9 +92,9 @@ export default class LayersControlExample extends Component {
           </Overlay>
           <Overlay checked name="Layer group with circles">
             <LayerGroup>
-              <Circle center={this.state.center} fillColor="blue" radius={200} />
+              <Circle center={this.props.location} fillColor="blue" radius={200} />
               <Circle
-                center={this.state.center}
+                center={this.props.location}
                 fillColor="red"
                 radius={100}
                 stroke={false}
