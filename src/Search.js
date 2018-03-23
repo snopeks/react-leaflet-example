@@ -29,6 +29,8 @@ export default class Search extends Component {
       let lat = data.features[0].geometry.coordinates[1]
       //this onChange is referencing the onChange in App.js
       this.props.onChange(lat, lng)
+      let searchbar = document.getElementById('searchbar')
+      searchbar.value = ''
     })
   }
 
@@ -38,7 +40,7 @@ export default class Search extends Component {
       <div>
         <h2>Where in the world!!</h2>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.query} onChange={this.updateValue} placeholder="Search map"/>
+          <input id="searchbar" type="text" value={this.state.query} onChange={this.updateValue} placeholder="Search map"/>
           <input type="submit"/>
         </form>
       </div>
