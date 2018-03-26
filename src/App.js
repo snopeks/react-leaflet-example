@@ -24,9 +24,13 @@ class App extends Component {
     }
     return (
       <div className="App">
+        <div className="container">
         <SimpleExample location={this.state.center} onChange={this.handleSearch} ></SimpleExample>
-        <Search onChange={this.handleSearch}></Search>
-        <Post title={post.title} author={post.author} body={post.body} comments={post.comments}></Post>
+          <div className="row">
+            <Search onChange={this.handleSearch}></Search>
+            <Post title={post.title} author={post.author} body={post.body} comments={post.comments}></Post>
+          </div>
+        </div>
       </div>
     );
   }

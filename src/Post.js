@@ -7,7 +7,7 @@ class Post extends Component {
         <Comment message={comment} key={index} />
       ))
     return (
-      <div className='post-page'>
+      <div className='post-page col-4'>
         <h1>{this.props.title}</h1>
         <h2>By {this.props.author}</h2>
         <p>{this.props.body}</p>

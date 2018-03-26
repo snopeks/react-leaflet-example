@@ -1,12 +1,11 @@
 .App {
-  text-align: center;
+  background-color: #e7ece8;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.btn-custom{
+  color: #e7ece8;
+  background-color: #e9735c;
 }
-
 .App-header {
   background-color: #222;
   height: 150px;
@@ -24,6 +23,7 @@
 .leaflet-container {
     height: 500px;
     width: 100%;
+    border: thick double #541e19;
 }
 
 @keyframes App-logo-spin {

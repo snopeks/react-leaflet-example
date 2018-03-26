@@ -8,8 +8,6 @@ export default class Search extends Component {
       query: ''
     }
 
-    // this.buttonClick = this.buttonClick.bind(this);
-    // this.mapClick = this.mapClick.bind(this);
     this.updateValue = this.updateValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -37,12 +35,14 @@ export default class Search extends Component {
 
   render(){
     return(
-      <div>
-        <h2>Where in the world!!</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input id="searchbar" type="text" value={this.state.query} onChange={this.updateValue} placeholder="Search map"/>
-          <input type="submit"/>
-        </form>
-      </div>
+        <div className="col-6">
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label fo="searchbar">Where would you like to go?</label>
+              <input className="form-control" id="searchbar" type="text" value={this.state.query} onChange={this.updateValue} placeholder="Enter a location"/>
+            </div>
+            <button className="btn btn-custom" type="submit">Search</button>
+          </form>
+        </div>
     )}
 }
