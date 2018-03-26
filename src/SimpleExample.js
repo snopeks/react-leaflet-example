@@ -120,7 +120,7 @@ export default class LayersControlExample extends Component {
           </Overlay>
         </LayersControl>
       </Map>
-      <button onClick={this.buttonClick}>Go to Vancouver!</button>
+      <button className="btn btn-secondary" onClick={this.buttonClick}>Go to Vancouver!</button>
       </div>
     )
   }
