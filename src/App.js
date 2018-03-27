@@ -3,6 +3,8 @@ import './App.css';
 import SimpleExample from './SimpleExample';
 import Search from './Search';
 import Post from './Post';
+import Header from './Header';
+import Footer from './Footer';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,8 @@ class App extends Component {
     }
     return (
       <div className="App">
+        <Header />
+        <h2>Hello, world!</h2>
         <div className="container">
         <SimpleExample location={this.state.center} onChange={this.handleSearch} ></SimpleExample>
           <div className="row">
@@ -31,6 +35,7 @@ class App extends Component {
             <Post title={post.title} author={post.author} body={post.body} comments={post.comments}></Post>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
