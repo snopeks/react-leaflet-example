@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import SimpleExample from './SimpleExample';
-import Search from './Search';
-import Post from './Post';
+import { Route, Link, Switch } from 'react-router-dom';
+import About from './About';
+import Home from './Home';
 import Header from './Header';
 import Footer from './Footer';
 class App extends Component {
@@ -27,13 +27,17 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <h2>Hello, world!</h2>
-        <div className="container">
-        <SimpleExample location={this.state.center} onChange={this.handleSearch} ></SimpleExample>
-          <div className="row">
-            <Search onChange={this.handleSearch}></Search>
-            <Post title={post.title} author={post.author} body={post.body} comments={post.comments}></Post>
-          </div>
+        <div className="container main">
+        <Switch>
+          <Route
+            path="/about"
+            component={About}
+          />
+          <Route
+            exact path="/"
+            component={Home}
+          />
+        </Switch>
         </div>
         <Footer />
       </div>
