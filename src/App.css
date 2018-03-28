@@ -2,6 +2,18 @@
   background-color: #e7ece8;
 }
 
+ .main{
+   height: auto;
+   margin-top: 2em;
+   margin-bottom: 2em;
+ }
+ label{
+   text-align: center;
+ }
+
+ a {
+   text-align: center;
+ }
 .btn-custom{
   color: #e7ece8;
   background-color: #e9735c;
@@ -14,7 +26,7 @@
 .App-intro {
   font-size: large;
 }
-h1, h2{
+h1, h2, h3{
   text-align: center;
   color: #541e19;
 }
@@ -29,6 +41,9 @@ h1, h2{
   color: #e9735c;
   width: 20px;
   height: 20px;
+}
+.oi-menu{
+  color: #e7ece8;
 }
 .footer{
   text-align: center;

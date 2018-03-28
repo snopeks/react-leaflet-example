@@ -36,10 +36,11 @@ export default class Search extends Component {
   render(){
     return(
         <div className="col-6">
+          <h3>Where would you like to go? </h3>
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
-              <label fo="searchbar">Where would you like to go?</label>
-              <input className="form-control" id="searchbar" type="text" value={this.state.query} onChange={this.updateValue} placeholder="Enter a location"/>
+              <label fo="searchbar">Enter a location</label>
+              <input className="form-control" id="searchbar" type="text" value={this.state.query} onChange={this.updateValue} placeholder="e.g. Mexico City"/>
             </div>
             <button className="btn btn-custom" type="submit">Search</button>
           </form>
