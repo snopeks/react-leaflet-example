@@ -45,13 +45,32 @@ h1, h2, h3{
 .oi-menu{
   color: #e7ece8;
 }
-.footer{
+#profilePic{
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.social{
+  color: #f27c66;
+}
+.social:hover{
+  color: #541e19;
+  text-decoration: none;
+}
+#thanks{
   text-align: center;
-  height: 5em;
+  min-height: 5em;
+}
+.footer{
+  height: 7em;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
   background-color: #541e19;
 }
 .footer p {
-  margin: 0;
+  text-align: left;
+  padding: 2em;
   color: #f27c66;
 }
 .leaflet-container {

@@ -18,24 +18,18 @@ class App extends Component {
     this.setState({center: [lat, lng]})
   }
   render() {
-    const post = {
-      title: "New Post!",
-      author: "Stephanie Snopek",
-      body: "I am just excited to be here.",
-      comments: ['great!', 'good work', 'thanks']
-    }
     return (
       <div className="App">
         <Header />
         <div className="container main">
         <Switch>
           <Route
-            path="/about"
-            component={About}
+          exact path="/"
+          component={Home}
           />
           <Route
-            exact path="/"
-            component={Home}
+            path="/about"
+            component={About}
           />
         </Switch>
         </div>
