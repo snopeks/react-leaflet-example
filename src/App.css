@@ -59,13 +59,10 @@ h1, h2, h3{
 }
 #thanks{
   text-align: center;
-  min-height: 6em;
-
+  min-height: 5em;
 }
 .footer{
-
-  height: 6em;
-  position: fixed;
+  height: 7em;
   width: 100%;
   left: 0px;
   bottom: 0px;
@@ -73,7 +70,7 @@ h1, h2, h3{
 }
 .footer p {
   text-align: left;
-  margin: 1em;
+  padding: 2em;
   color: #f27c66;
 }
 .leaflet-container {
